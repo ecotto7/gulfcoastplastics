@@ -1,0 +1,343 @@
+[build]
+  command = ""
+  publish = "."
+
+# Security headers apply to every response, including 404.html.
+# Content-Security-Policy-Report-Only does not block anything.
+# style-src allows 'unsafe-inline' because the Contact Us page copies the
+# live JotForm wrapper style, and the JotForm loader sets iframe styles.
+# script-src, frame-src, and connect-src allow the JotForm hosts the embed uses.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000"
+    Content-Security-Policy-Report-Only = "default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' https://form.jotform.com https://*.jotform.com https://*.jotfor.ms; style-src 'self' 'unsafe-inline' https://form.jotform.com https://*.jotfor.ms; img-src 'self' data: https://form.jotform.com https://*.jotform.com https://*.jotfor.ms https://files.jotform.com; font-src 'self' data:; frame-src https://form.jotform.com https://*.jotform.com; connect-src 'self' https://form.jotform.com https://*.jotform.com https://*.jotfor.ms https://submit.jotform.com https://events.jotform.com; form-action 'self' https://submit.jotform.com https://form.jotform.com https://*.jotform.com"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Do not redirect /?p=5 or /?page_id=5. Both already land on the homepage.
+# Netlify forwards the query string, so sending those to / would loop.
+[[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/"
+  to = "/about-us/"
+  status = 301
+  force = true
+  query = {page_id = "64"}
+
+[[redirects]]
+  from = "/"
+  to = "/retail-display/"
+  status = 301
+  force = true
+  query = {page_id = "69"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/"
+  status = 301
+  force = true
+  query = {page_id = "71"}
+
+[[redirects]]
+  from = "/"
+  to = "/contact-us/"
+  status = 301
+  force = true
+  query = {page_id = "73"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/"
+  status = 301
+  force = true
+  query = {page_id = "76"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/pouches/"
+  status = 301
+  force = true
+  query = {page_id = "78"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/roll-stock/"
+  status = 301
+  force = true
+  query = {page_id = "80"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/sleeve-labels/"
+  status = 301
+  force = true
+  query = {page_id = "82"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/printed-poly-bags/"
+  status = 301
+  force = true
+  query = {page_id = "84"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/plain-poly-bags/"
+  status = 301
+  force = true
+  query = {page_id = "86"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/header-bags/"
+  status = 301
+  force = true
+  query = {page_id = "88"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/wicketed-bags/"
+  status = 301
+  force = true
+  query = {page_id = "90"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/handle-bags/"
+  status = 301
+  force = true
+  query = {page_id = "92"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/water-tight-bags/"
+  status = 301
+  force = true
+  query = {page_id = "94"}
+
+[[redirects]]
+  from = "/"
+  to = "/products/bags/square-bottom-bags/"
+  status = 301
+  force = true
+  query = {page_id = "96"}
+
+[[redirects]]
+  from = "/"
+  to = "/highest-quality-roll-stock/"
+  status = 301
+  force = true
+  query = {p = "1"}
+
+[[redirects]]
+  from = "/"
+  to = "/reliable-sleeve-labels/"
+  status = 301
+  force = true
+  query = {p = "174"}
+
+[[redirects]]
+  from = "/"
+  to = "/versatile-pouches/"
+  status = 301
+  force = true
+  query = {p = "189"}
+
+[[redirects]]
+  from = "/"
+  to = "/great-marketing-handle-bags/"
+  status = 301
+  force = true
+  query = {p = "216"}
+
+[[redirects]]
+  from = "/About-Us"
+  to = "/about-us/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/About-Us/"
+  to = "/about-us/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Retail-Display"
+  to = "/retail-display/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Retail-Display/"
+  to = "/retail-display/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Contact-Us"
+  to = "/contact-us/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Contact-Us/"
+  to = "/contact-us/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products"
+  to = "/products/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/"
+  to = "/products/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags"
+  to = "/products/bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/"
+  to = "/products/bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Pouches"
+  to = "/products/pouches/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Pouches/"
+  to = "/products/pouches/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Roll-Stock"
+  to = "/products/roll-stock/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Roll-Stock/"
+  to = "/products/roll-stock/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Sleeve-Labels"
+  to = "/products/sleeve-labels/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Sleeve-Labels/"
+  to = "/products/sleeve-labels/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Printed-Poly-Bags"
+  to = "/products/bags/printed-poly-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Printed-Poly-Bags/"
+  to = "/products/bags/printed-poly-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Plain-Poly-Bags"
+  to = "/products/bags/plain-poly-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Plain-Poly-Bags/"
+  to = "/products/bags/plain-poly-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Header-Bags"
+  to = "/products/bags/header-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Header-Bags/"
+  to = "/products/bags/header-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Wicketed-Bags"
+  to = "/products/bags/wicketed-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Wicketed-Bags/"
+  to = "/products/bags/wicketed-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Handle-Bags"
+  to = "/products/bags/handle-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Handle-Bags/"
+  to = "/products/bags/handle-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Water-Tight-Bags"
+  to = "/products/bags/water-tight-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Water-Tight-Bags/"
+  to = "/products/bags/water-tight-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Square-Bottom-Bags"
+  to = "/products/bags/square-bottom-bags/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Products/Bags/Square-Bottom-Bags/"
+  to = "/products/bags/square-bottom-bags/"
+  status = 301
+  force = true
