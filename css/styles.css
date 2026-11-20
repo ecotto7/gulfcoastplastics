@@ -777,11 +777,6 @@ textarea {
   color: var(--blue);
 }
 
-.jotform-embed {
-  max-height: 795px;
-  overflow: hidden;
-}
-
 .archive-list {
   padding: 36px 0 64px;
 }

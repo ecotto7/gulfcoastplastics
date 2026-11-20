@@ -18,7 +18,7 @@ This is a static HTML, CSS, and JavaScript site. Files live at the repository ro
 ## Forms
 
 - Do not use Netlify Forms. Do not add `data-netlify`, a form-name field, or a honeypot.
-- Forms stay on their existing provider. Contact Us is the JotForm embed already on the page: form id `253643107208452`, script `https://form.jotform.com/jsform/253643107208452`. Keep that embed.
+- Forms stay on their existing provider. Contact Us is the JotForm embed already on the page: form id `253643107208452`, script `https://form.jotform.com/jsform/253643107208452`. Keep that embed. Do not clip the form. The Jotform mark at the bottom stays visible.
 - Do not tell future edits to use Netlify Forms.
 
 ## Pages and redirects
