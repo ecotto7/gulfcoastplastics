@@ -341,3 +341,27 @@
   to = "/products/bags/square-bottom-bags/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/Privacy-Policy"
+  to = "/privacy-policy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Privacy-Policy/"
+  to = "/privacy-policy/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Terms-Of_Use"
+  to = "/terms-of-use/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Terms-Of_Use/"
+  to = "/terms-of-use/"
+  status = 301
+  force = true

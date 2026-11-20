@@ -255,6 +255,18 @@ textarea {
   margin: 0 0 16px;
 }
 
+.prose h2 {
+  margin: 28px 0 12px;
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.wrap.prose {
+  padding: 48px 0 72px;
+}
+
 .section-title,
 .content-head {
   margin: 0 0 18px;
@@ -288,6 +300,17 @@ textarea {
 .split img.feature {
   display: block;
   width: 100%;
+}
+
+/* These two photos are only 200 and 250 pixels. Stretching them blurs them. */
+.split.fit-image {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.split.fit-image img.feature {
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .about-photos {
@@ -945,6 +968,7 @@ textarea {
 
   .slide,
   .split,
+  .split.fit-image,
   .cards,
   .company-grid,
   .contact-grid,

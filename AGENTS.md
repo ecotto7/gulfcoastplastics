@@ -27,7 +27,7 @@ This is a static HTML, CSS, and JavaScript site. Files live at the repository ro
 - Do not redirect a query string that already lands on the same path. `/?p=5` and `/?page_id=5` already land on the homepage. Redirecting them to `/` forwards the query string and the homepage loops.
 - Query strings are forwarded on 301s.
 - `/new-page/` is an unused placeholder and is not part of this site.
-- Footer links `/Privacy-Policy` and `/Terms-Of_Use` 404 on the live site. There is no privacy or terms copy to convert. Do not invent that text.
+- Privacy Policy is `/privacy-policy/` and Terms of Use is `/terms-of-use/`. The copy is the CTI East Coast privacy policy and terms of use, with the company set to Gulf Coast Plastics, Inc., the site set to https://gulfcoastplastics.com, and the contact details taken from the Contact Us page. `/Privacy-Policy` and `/Terms-Of_Use` redirect to those pages.
 
 ## Copyright
 
